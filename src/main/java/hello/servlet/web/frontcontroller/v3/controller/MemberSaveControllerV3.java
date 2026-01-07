@@ -14,10 +14,10 @@ public class MemberSaveControllerV3 implements ControllerV3 {
     @Override
     public ModelView process(Map<String, String> paramMap) {
 
-        String useranme = paramMap.get("username");
+        String username = paramMap.get("username");
         int age = Integer.parseInt(paramMap.get("age"));
 
-        Member member = new Member(useranme, age);
+        Member member = new Member(username, age);
         memberRepository.save(member);
 
         ModelView mv = new ModelView("save-result");
